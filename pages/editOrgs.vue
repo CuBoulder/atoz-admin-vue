@@ -1,6 +1,9 @@
 <template>
-  <div>
-    <h1>Edit Organization</h1>
+  <div v-if="$store.state.currentDepartment === null">
+        Please <nuxt-link to="/"> select a department </nuxt-link> before editing
+  </div>
+  <div v-else>
+    <h1>Edit Organization {{$store.state.currentDepartment}} </h1>
     <!-- form progress bar -->
     <!-- https://codepen.io/himanshu/pen/syLAh -->
     <div class="form-progress">
